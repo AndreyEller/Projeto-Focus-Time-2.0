@@ -1,0 +1,226 @@
+:root {
+  --bg-darck-theme: #121214;
+  --bg-light-theme: #e5e5e5;
+
+  --dark-color-text: #ffffff;
+  --light-light-text: #29292e;
+
+  --bg-btn-dark: #29292e;
+  --bg-selected-btn-dark: #0a3442;
+
+  --bg-btn-light: #e1e1e6;
+  --bg-selected-btn-light: #02799d;
+
+  --icon-fill-dark-mode: #c4c4cc;
+  --icon-fill-light-mode: #323238;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+header {
+  height: 9.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 3.75rem 3.75rem 0 0;
+}
+header svg {
+  cursor: pointer;
+}
+header .hide {
+  display: none;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  height: calc(100vh-12.5rem);
+  grid-template-columns: 2fr 1fr;
+  width: 821px;
+  height: 336px;
+}
+
+.timer-board {
+  width: 321px;
+  height: 213px;
+  align-self: center;
+  justify-self: center;
+}
+
+.timer {
+  display: flex;
+  max-width: 20rem;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 126.166px;
+  line-height: 148px;
+  /* identical to box height */
+
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--icon-fill-light-mode);
+  text-shadow: 2px 2px 2px greenyellow;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 40px;
+}
+
+.controls svg {
+  cursor: pointer;
+}
+
+.controls svg path {
+  fill: var(--icon-fill-light-mode);
+  /* filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.25)); */
+}
+
+.controls-dark svg path {
+  fill: #c4c4cc;
+  /* filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.25)); */
+}
+
+.sound-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 308px;
+  height: 336px;
+  position: relative;
+}
+.sound-card {
+  width: 138px;
+  height: 152px;
+  left: 742px;
+  top: 192px;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: pointer;
+  border-radius: 24px;
+  background: var(--bg-btn-light);
+  /* box-shadow: 4px 4px 8px RGBA(0,0,0,0.25); */
+  box-shadow: 2px 2px 2px rgba(29, 245, 22, 0.637);
+}
+
+.sound-card svg path {
+  fill: var(--light-light-text);
+}
+
+.sound-card input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 90px;
+  height: 4px;
+  border-radius: 5px;
+}
+.sound-card .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background: url("./assets/soundIcons/dark-sliderBall.svg");
+}
+
+.sound-card input {
+  background-color: var(--light-light-text);
+}
+
+.sound-card-dark {
+  background-color: var(--bg-btn-dark);
+  box-shadow: 2px 2px 2px #0d0d0d;
+}
+
+.sound-card-dark svg path {
+  fill: var(--icon-fill-dark-mode);
+}
+.sound-card-dark {
+  background: var(--bg-btn-ligth);
+}
+.sound-card-dark .slider::-webkit-slider-thumb {
+  background: url("./assets/soundIcons/white-sliderBall.svg");
+}
+.sound-card-dark input {
+  background-color: var(--icon-fill-dark-mode);
+}
+.sound-card-dark {
+  background-color: var(--bg-btn-dark);
+}
+.sound-card-play {
+  background-color: #02799d;
+}
+
+.sound-volume-set {
+  position: absolute;
+  z-index: 2;
+  top: -60px;
+  left: 290px;
+  align-self: start;
+}
+.sound-volume-set svg {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  header {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  header svg {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  main {
+    /* margin-top:8rem; */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sound-board {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* background-color: #121214; */
+    place-items: center;
+    padding: 0 3rem 0 3rem;
+    gap: 1rem;
+  }
+  .sound-volume-set {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: -280px;
+    align-self: start;
+  }
+}
